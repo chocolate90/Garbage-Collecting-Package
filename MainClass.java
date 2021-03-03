@@ -1,32 +1,32 @@
-package import_ex;
-
-// import할 때는 클래스 선언부 위에 패키지명을 포함한 전체경로를 적는다.
-//import fruit.Apple;
-//import fruit.Orange;
-import fruit.*;
-
-import java.util.Scanner;
-
-import com.abc.ABC;
-import com.def.DEF;
-
+package string_ex;
 
 public class MainClass {
 
 	public static void main(String[] args) {
 		
-// 타입 >"Apple" a = new Apple();
-		Orange o = new Orange();
+		String str1 = "홍길동";
+		String str2 = "홍길동";
+		String str3 = new String("홍길동");
 		
-		ABC abc = new ABC();
-		DEF def = new DEF(); // ctrl + space
+		System.out.println(str1);
+		System.out.println(str2);
+		System.out.println(str3);
 		
-		Scanner scan = new Scanner(System.in);
+		System.out.println(str1 == str2);
+		System.out.println(str1 == str3);
 		
-		int i =1;
-		System.out.println(i); // 기본타입
-//		System.out.println(a); // 참조타입
-		System.out.println(o); // 참조타입
-		//jre 안에 jar = 자바 폴더의 묶음
+		/*
+		 *  같은  클래스 내부에서 문자열을 동일하게 선언하면, 같은 String 객체를 가르키게 된다
+		 *  하지만, 직접 String 객체 생성 명령을 내리거나, 다른 클래스에서 넘어오는 String은 다른 주소를 가지게 된다.
+		 *  
+		 *  그래서 문자열 비교시에 == 대신에 String 클래스가 제공하는 equals() 메서드를 사용해야 한다.
+		 */
+		
+		System.out.println(str1.equals(str2));
+		System.out.println(str1.equals(str3));
+		
+		if(str1.equals("홍길동")) {
+			System.out.println("문자열 자체가 같음");
+		}
 	}
 }
